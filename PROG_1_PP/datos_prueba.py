@@ -1,13 +1,29 @@
 """
-Módulo datos_prueba.
-Datos hardcodeados de 30 estudiantes para probar el programa sin tener
-que cargar todo a mano (lo permite la Nota 0 de la consigna).
+Módulo: datos_prueba.py
+
+Descripción:
+    Contiene los datos de 30 estudiantes escritos directamente en el
+    código ("hardcodeados"), para poder probar el programa sin tener
+    que cargar 150 datos a mano cada vez (Nota 0 de la consigna).
+
+Funciones:
+    obtener_datos_prueba() -> tuple de 5 listas
 """
 
 
 def obtener_datos_prueba():
     """
-    Devuelve las cinco listas paralelas con datos de prueba ya válidos.
+    Devuelve las 5 listas paralelas con datos de prueba ya válidos.
+
+    Lógica:
+        Crea las 5 listas escritas a mano, con 30 elementos cada una,
+        y las devuelve. La posición 0 de todas las listas corresponde
+        al mismo estudiante (legajo 1001, Gomez Ana, F, notas 7 y 8),
+        la posición 1 al siguiente, y así hasta la 29.
+        Devuelve lo mismo que cargar_estudiantes, pero sin pedir nada.
+
+    Parámetros:
+        No recibe parámetros.
 
     Retorna:
         tuple: (legajos, nombres, generos, notas1, notas2)
