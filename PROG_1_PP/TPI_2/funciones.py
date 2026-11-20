@@ -558,3 +558,8 @@ def opcion_contar_calificaciones(estudiantes: list) -> None:
     contadores = contar_calificaciones(estudiantes, numero_materia)
     print(f"\n--- REPETICIONES DE NOTAS EN MAT_{numero_materia} ---\n")
     mostrar_repeticiones(contadores)
+
+
+def opcion_salir() -> None:
+    """Muestra el mensaje de salida del sistema."""
+    print("\nSaliendo del programa.")

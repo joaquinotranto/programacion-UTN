@@ -16,9 +16,15 @@ while opcion != 10:
     else:
         match opcion:
             case 1:
-                estudiantes = opcion_cargar_csv(); datos_cargados = len(estudiantes) > 0; promedios_calculados = False
+                nuevos = opcion_cargar_csv()
+                if len(nuevos) > 0:
+                    estudiantes = nuevos
+                    datos_cargados = True
+                    promedios_calculados = False
             case 2:
-                estudiantes = opcion_cargar_datos(); datos_cargados = len(estudiantes) > 0; promedios_calculados = False
+                estudiantes = opcion_cargar_datos()
+                datos_cargados = len(estudiantes) > 0
+                promedios_calculados = False
             case 3:
                 opcion_mostrar_datos(estudiantes)
             case 4:
@@ -34,4 +40,4 @@ while opcion != 10:
             case 9:
                 opcion_guardar_json(estudiantes)
             case 10:
-                print("Saliendo del programa.")
+                opcion_salir()

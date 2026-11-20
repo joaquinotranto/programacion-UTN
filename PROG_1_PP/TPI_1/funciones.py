@@ -587,3 +587,8 @@ def opcion_contar_calificaciones(matriz: list) -> None:
     contadores = contar_calificaciones(matriz, numero_materia)
     print(f"\n--- REPETICIONES DE NOTAS EN MATERIA_{numero_materia} ---\n")
     mostrar_repeticiones(contadores)
+
+
+def opcion_salir() -> None:
+    """Muestra el mensaje de salida del sistema."""
+    print("\nSaliendo del programa.")

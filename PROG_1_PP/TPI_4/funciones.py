@@ -554,7 +554,7 @@ def validar_fila_csv(fila):
     for nota in notas:
         if not validar_calificacion(nota):
             return None
-    if promedio < 0 or promedio > 10:
+    if not 0 <= promedio <= 10:
         return None
     return {"legajo":legajo,"nombre":nombre,"genero":genero,"notas":notas,"promedio":promedio}
 
@@ -645,3 +645,8 @@ def mostrar_menu():
     print(10, "- Contar calificaciones por materia")
     print(11, "- Guardar datos en JSON")
     print(12, "- Salir")
+
+
+def opcion_salir() -> None:
+    """Muestra el mensaje de salida del sistema."""
+    print("\nSaliendo del programa.")

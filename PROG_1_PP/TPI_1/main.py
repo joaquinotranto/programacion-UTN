@@ -17,7 +17,7 @@ Este archivo no define funciones: todas están en la biblioteca propia
 from funciones import (CANTIDAD_ESTUDIANTES, CANTIDAD_MATERIAS, crear_matriz, mostrar_menu,
                        opcion_cargar_datos, opcion_mostrar_datos, opcion_calcular_promedios,
                        opcion_ordenar_y_mostrar, opcion_materias_mayor_promedio,
-                       opcion_buscar_estudiante, opcion_contar_calificaciones)
+                       opcion_buscar_estudiante, opcion_contar_calificaciones, opcion_salir)
 from validaciones import pedir_entero
 
 # Estructuras de datos (listas paralelas a las filas de la matriz)
@@ -58,4 +58,4 @@ while opcion != 8:
             case 7:
                 opcion_contar_calificaciones(calificaciones)
             case 8:
-                print("\nSaliendo del programa. ¡Hasta luego!")
+                opcion_salir()
