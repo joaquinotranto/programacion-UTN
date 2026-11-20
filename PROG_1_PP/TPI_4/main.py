@@ -1,3 +1,8 @@
+"""Programa principal del TPI 4.
+
+Administra el menú de estudiantes y coordina las funciones de la biblioteca.
+"""
+
 from funciones import *
 from validaciones import pedir_entero
 

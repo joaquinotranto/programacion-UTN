@@ -1,9 +1,7 @@
-import csv
-import json
 """
 Módulo funciones.
 
-Biblioteca propia con las funciones del TP Lista de Diccionarios.
+Biblioteca propia con las funciones del TPI 4: listas de diccionarios y archivos.
 
 Los estudiantes se guardan en una lista donde cada elemento es un
 diccionario con estas claves:
@@ -11,12 +9,16 @@ diccionario con estas claves:
     "nombre"   -> str
     "genero"   -> 'F', 'M' o 'X'
     "notas"    -> lista de 5 calificaciones enteras entre 1 y 10
-    "promedio" -> float (vale None hasta que se calcula con la opción 3)
+    "promedio" -> float (se calcula mediante la opción de promedios)
 
 Como no hay una lista de materias, la nota de la posición j de la lista
 "notas" corresponde a la materia MAT_(j + 1).
 
 """
+
+import csv
+import json
+
 
 from validaciones import pedir_entero, pedir_calificacion, pedir_nombre, pedir_genero, pedir_legajo
 from datos_prueba import ESTUDIANTES_PRUEBA
@@ -554,7 +556,7 @@ def validar_fila_csv(fila):
     for nota in notas:
         if not validar_calificacion(nota):
             return None
-    if not 0 <= promedio <= 10:
+    if not (0 <= promedio <= 10):
         return None
     return {"legajo":legajo,"nombre":nombre,"genero":genero,"notas":notas,"promedio":promedio}
 
@@ -563,27 +565,36 @@ def cargar_desde_csv(nombre_archivo):
     """Lee estudiantes válidos desde CSV, sin legajos duplicados."""
     estudiantes = []
     legajos = set()
+    archivo_valido = True
     try:
         with open(nombre_archivo, 'r', encoding='utf-8-sig', newline='') as archivo:
             lector = csv.reader(archivo)
             for numero, fila in enumerate(lector, 1):
                 estudiante = validar_fila_csv(fila)
                 if estudiante is None:
-                    print('Fila', numero, 'inválida. Se omite.')
+                    print('Fila', numero, 'inválida.')
+                    archivo_valido = False
                 elif estudiante['legajo'] in legajos:
-                    print('Fila', numero, 'con legajo repetido. Se omite.')
+                    print('Fila', numero, 'con legajo repetido.')
+                    archivo_valido = False
                 elif len(estudiantes) < MAXIMO_ESTUDIANTES:
                     estudiantes.append(estudiante)
                     legajos.add(estudiante['legajo'])
                 else:
-                    print('Se alcanzó el máximo de estudiantes.')
+                    print('El CSV supera el máximo de estudiantes.')
+                    archivo_valido = False
                     break
     except (OSError, UnicodeError) as error:
         print('No se pudo leer el CSV:', error)
+        return []
+    if not archivo_valido:
+        print('No se cargó el CSV porque contiene datos inválidos.')
+        return []
     return estudiantes
 
 
 def opcion_cargar_csv():
+    """Solicita la ruta del CSV y devuelve los estudiantes válidos cargados."""
     nombre = input('Nombre del archivo CSV: ').strip()
     estudiantes = cargar_desde_csv(nombre)
     print('Estudiantes cargados:', len(estudiantes))
@@ -591,6 +602,7 @@ def opcion_cargar_csv():
 
 
 def opcion_guardar_json(estudiantes):
+    """Guarda la lista de estudiantes en un archivo JSON solicitado por consola."""
     nombre = input('Nombre del archivo JSON de salida: ').strip()
     if not nombre:
         print('Nombre de archivo inválido.')
@@ -609,6 +621,7 @@ def normalizar_estudiantes(estudiantes):
 
 
 def opcion_normalizar(estudiantes):
+    """Normaliza los textos de todos los estudiantes mediante map."""
     estudiantes[:] = normalizar_estudiantes(estudiantes)
     print('Nombres y géneros normalizados.')
 
