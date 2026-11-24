@@ -12,6 +12,13 @@ promedios estén calculados (opción 3).
 
 Este archivo no define funciones: todas están en la biblioteca propia
 (módulos funciones y validaciones).
+
+Funcionamiento:
+    Inicializa las estructuras y las banderas de carga y promedios.
+    El while repite el menú hasta la opción 8. Se valida la opción
+    y se impide operar sin datos o sin promedios cuando corresponde.
+    match/case selecciona la función de cada opción. Al cargar nuevos
+    datos se reinicia el estado de los promedios.
 """
 
 from funciones import (mostrar_menu, opcion_cargar_datos, opcion_mostrar_datos,
