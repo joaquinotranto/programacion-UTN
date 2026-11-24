@@ -1,6 +1,14 @@
-"""Programa principal del TPI 4.
+"""
+Programa principal del TPI 4.
 
 Administra el menú de estudiantes y coordina las funciones de la biblioteca.
+
+Funcionamiento:
+    Inicializa las estructuras y las banderas de carga y promedios.
+    El while repite el menú hasta la opción 12. Se valida la opción
+    y se impide operar sin datos o sin promedios cuando corresponde.
+    match/case selecciona la función de cada opción. Al cargar nuevos
+    datos se reinicia el estado de los promedios.
 """
 
 from funciones import *
