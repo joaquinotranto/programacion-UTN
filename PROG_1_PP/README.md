@@ -1,18 +1,33 @@
 # Trabajos Prácticos Integradores - Programación I
 
-Cada carpeta `TPI_1`, `TPI_2`, `TPI_3` y `TPI_4` es un proyecto independiente.
+# Descripción general
 
-## Ejecución
+Este repositorio contiene los cuatro Trabajos Prácticos Integradores correspondientes a la materia Programación I de la UTN.
 
-Abrir la carpeta del trabajo y ejecutar `python main.py` con Python 3.10 o posterior (se utiliza `match`). Mantener todos los archivos de cada carpeta juntos. Para utilizar OnlineGDB, crear un proyecto Python 3 por cada TPI y cargar todos sus archivos.
+Cada trabajo constituye un proyecto independiente, desarrollado en Python, que incorpora progresivamente los contenidos abordados durante la cursada.
 
-## Contenido
+# Contenido
 
-- **TPI_1:** matriz de 30 estudiantes y listas paralelas; menú de 8 opciones.
-- **TPI_2:** lista de diccionarios; menú de 8 opciones y hasta 1000 estudiantes.
-- **TPI_3:** lista de diccionarios y archivos CSV/JSON; menú de 10 opciones.
-- **TPI_4:** lo anterior más normalización, `lambda`, `map` y `filter`; menú de 12 opciones.
+TPI_1: listas paralelas, matrices, funciones, validaciones, búsqueda y ordenamiento.
 
-Los primeros 30 estudiantes de los cuatro trabajos coinciden. En TPI_2, TPI_3 y TPI_4 hay 1000 estudiantes de prueba. Para la carga de prueba, elegir la opción de carga y luego los datos de prueba. En TPI_3 y TPI_4, para leer el CSV de ejemplo, elegir la opción 1 e ingresar `estudiantes.csv`.
+TPI_2: listas de diccionarios y administración de hasta 1000 estudiantes.
 
-El archivo JSON se crea al ejecutar la opción de exportación y escribir un nombre, por ejemplo `estudiantes_salida.json`.
+TPI_3: listas de diccionarios, lectura de archivos CSV y almacenamiento de datos en formato JSON.
+
+TPI_4: integración de los contenidos anteriores y aplicación del paradigma funcional mediante lambda, map y filter.
+
+# Organización del código
+
+Los programas se encuentran organizados en módulos que separan la ejecución principal, las operaciones sobre los datos y las funciones de validación.
+
+Las funciones incluyen documentación mediante docstrings, donde se describe su propósito, sus parámetros y sus valores de retorno, según corresponda.
+
+# Ejecución
+
+Para ejecutar cada trabajo, ingresar a su carpeta correspondiente y ejecutar el archivo main.py utilizando Python 3.10 o superior.
+
+Los trabajos TPI_3 y TPI_4 incluyen el archivo estudiantes.csv para la carga de datos.
+
+# Datos de prueba
+
+Los cuatro trabajos incluyen datos de prueba para facilitar la ejecución y la comprobación de sus funcionalidades.
