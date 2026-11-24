@@ -4,6 +4,10 @@ Módulo datos_prueba.
 Contiene datos hardcodeados (Nota 0 del TP) para probar el programa sin
 tener que cargar a mano los 30 estudiantes. Todas las listas son paralelas:
 la posición i de cada lista corresponde a la fila i de la matriz.
+
+Uso:
+    Los datos escritos en el código permiten probar la carga sin
+    ingresar todos los registros por consola (Nota 0).
 """
 
 NOMBRES_PRUEBA = [
